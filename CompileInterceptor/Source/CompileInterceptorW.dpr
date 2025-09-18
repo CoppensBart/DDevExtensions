@@ -18,11 +18,19 @@ library CompileInterceptorW;
 {$IFEND}
 
 uses
+{$IF CompilerVersion >= 23.0}
+  System.ShareMem,
+  Winapi.Windows,
+  System.SysUtils,
+  System.Classes,
+  System.Win.Registry,
+{$ELSE}
   ShareMem,
   Windows,
   SysUtils,
   Classes,
   Registry,
+{$IFEND}
   CompilerHooks in 'CompilerHooks.pas',
   FileStreams in 'FileStreams.pas',
   InterceptIntf in 'InterceptIntf.pas',

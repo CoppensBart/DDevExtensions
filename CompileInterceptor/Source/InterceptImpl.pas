@@ -13,7 +13,17 @@ unit InterceptImpl;
 interface
 
 uses
-  SysUtils, Classes, Contnrs, FileStreams, InterceptIntf;
+{$IF CompilerVersion >= 23.0}
+  System.SysUtils,
+  System.Classes,
+  System.Contnrs,
+{$ELSE}
+  SysUtils,
+  Classes,
+  Contnrs,
+{$IFEND}
+  FileStreams,
+  InterceptIntf;
 
 type
   TCompileInterceptorServices = class(TComponent, ICompileInterceptorServices)

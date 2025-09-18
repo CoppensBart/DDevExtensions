@@ -14,7 +14,19 @@ unit ToolsAPIIntf;
 interface
 
 uses
-  Windows, SysUtils, TypInfo, Classes, ActiveX;
+{$IF CompilerVersion >= 23.0}
+  Winapi.Windows,
+  System.SysUtils,
+  System.TypInfo,
+  System.Classes,
+  Winapi.ActiveX;
+{$ELSE}
+  Windows,
+  SysUtils,
+  TypInfo,
+  Classes,
+  ActiveX;
+{$IFEND}
 
 { Possible values for TOTAModuleType }
 const

@@ -11,7 +11,13 @@ unit IdeDllNames;
 interface
 
 uses
-  Windows, SysUtils;
+{$IF CompilerVersion >= 23.0}
+  Winapi.Windows,
+  System.SysUtils;
+{$ELSE}
+  Windows,
+  SysUtils;
+{$IFEND}
 
 const
   LastSupportedIDEVersion = 370; // adjust ToolsAPIIntf.pas if necessary

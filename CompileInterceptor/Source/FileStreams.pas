@@ -13,7 +13,17 @@ unit FileStreams;
 interface
 
 uses
-  Windows, SysUtils, Classes, Contnrs;
+{$IF CompilerVersion >= 23.0}
+  Winapi.Windows,
+  System.SysUtils,
+  System.Classes,
+  System.Contnrs;
+{$ELSE}
+  Windows,
+  SysUtils,
+  Classes,
+  Contnrs;
+{$IFEND}
 
 const
   MaxWriteAvgBufferCount = 5;

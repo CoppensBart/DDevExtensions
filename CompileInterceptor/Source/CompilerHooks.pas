@@ -13,7 +13,20 @@ unit CompilerHooks;
 interface
 
 uses
-  Windows, SysUtils, Classes, Contnrs, FileStreams, Variants;
+{$IF CompilerVersion >= 23.0}
+  Winapi.Windows,
+  System.SysUtils,
+  System.Classes,
+  System.Contnrs,
+  System.Variants,
+{$ELSE}
+  Windows,
+  SysUtils,
+  Classes,
+  Contnrs,
+  Variants,
+{$IFEND}
+  FileStreams;
 
 var
   OptUseWriteCache: Boolean = True;
