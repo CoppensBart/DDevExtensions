@@ -1,29 +1,24 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{2BAF01A7-5596-444B-89D1-47A1A4550C45}</ProjectGuid>
-        <MainSource>DDevExtensionsReg.dpr</MainSource>
+        <Base>True</Base>
+        <AppType>Application</AppType>
+        <Basis>True</Basis>
         <Config Condition="'$(Config)'==''">Release</Config>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-        <ProjectVersion>20.3</ProjectVersion>
-        <Basis>True</Basis>
-        <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
-        <Base>True</Base>
+        <MainSource>DDevExtensionsReg.dpr</MainSource>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <TargetedPlatforms>1</TargetedPlatforms>
         <Platform>Win32</Platform>
+        <ProjectGuid>{2BAF01A7-5596-444B-89D1-47A1A4550C45}</ProjectGuid>
         <ProjectName Condition="'$(ProjectName)'==''">DDevExtensionsReg</ProjectName>
+        <ProjectVersion>20.3</ProjectVersion>
+        <TargetedPlatforms>1</TargetedPlatforms>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
         <Base_Win32>true</Base_Win32>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
-        <Base_Win64>true</Base_Win64>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
@@ -50,56 +45,42 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>DDevExtensionsReg</SanitizedProjectName>
+        <DCC_DcuOutput>.</DCC_DcuOutput>
+        <DCC_DependencyCheckOutputName>..\bin\InstallDDevExtensions.exe</DCC_DependencyCheckOutputName>
+        <DCC_ExeOutput>..\bin</DCC_ExeOutput>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_Platform>x86</DCC_Platform>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
         <VerInfo_Build>575</VerInfo_Build>
-        <VerInfo_Locale>1031</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=Andreas Hausladen;FileVersion=2.7.0.575;InternalName=;LegalCopyright=(C) 2006-2013 Andreas Hausladen;LegalTrademarks=;OriginalFilename=;ProductName=DDevExtensions;ProductVersion=2.7;Comments=</VerInfo_Keys>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Keys>CompanyName=Andreas Hausladen;FileVersion=2.7.0.575;InternalName=;LegalCopyright=(C) 2006-2013 Andreas Hausladen;LegalTrademarks=;OriginalFilename=;ProductName=DDevExtensions;ProductVersion=2.7;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1031</VerInfo_Locale>
         <VerInfo_MajorVer>2</VerInfo_MajorVer>
         <VerInfo_MinorVer>7</VerInfo_MinorVer>
-        <DCC_ImageBase>00400000</DCC_ImageBase>
-        <DCC_DependencyCheckOutputName>..\bin\InstallDDevExtensions.exe</DCC_DependencyCheckOutputName>
-        <DCC_MapFile>3</DCC_MapFile>
-        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
-        <DCC_UsePackage>vcl;rtl;vclx;$(DCC_UsePackage)</DCC_UsePackage>
-        <DCC_RangeChecking>true</DCC_RangeChecking>
-        <DCC_Platform>x86</DCC_Platform>
-        <DCC_ExeOutput>..\bin</DCC_ExeOutput>
-        <DCC_F>false</DCC_F>
-        <DCC_E>false</DCC_E>
-        <DCC_K>false</DCC_K>
-        <DCC_S>false</DCC_S>
-        <DCC_N>true</DCC_N>
-        <DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
-        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
-        <DCC_DcuOutput>.</DCC_DcuOutput>
-        <SanitizedProjectName>DDevExtensionsReg</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <Manifest_File>(None)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
-        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
-        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
-        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <BT_BuildType>Debug</BT_BuildType>
-        <Manifest_File>(Ohne)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
-        <VerInfo_MinorVer>7</VerInfo_MinorVer>
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <BT_BuildType>Debug</BT_BuildType>
-        <Manifest_File>(Ohne)</Manifest_File>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -131,7 +112,7 @@
                 <Source>
                     <Source Name="MainSource">DDevExtensionsReg.dpr</Source>
                 </Source>
-                <Parameters/>
+                <Excluded_Packages/>
                 <VersionInfo>
                     <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
                     <VersionInfo Name="AutoIncBuild">False</VersionInfo>
@@ -159,10 +140,7 @@
                     <VersionInfoKeys Name="ProductVersion">2.5</VersionInfoKeys>
                     <VersionInfoKeys Name="Comments"/>
                 </VersionInfoKeys>
-                <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
-                </Excluded_Packages>
+                <Parameters/>
             </Delphi.Personality>
             <Platforms>
                 <Platform value="Win32">True</Platform>

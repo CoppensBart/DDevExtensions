@@ -11,9 +11,40 @@ unit Main;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, CheckLst, Registry, ShlObj, ActiveX, AppConsts,
-  ExtCtrls, ComCtrls;
+{$IF CompilerVersion >= 23.0}
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.StdCtrls,
+  Vcl.CheckLst,
+  System.Win.Registry,
+  Winapi.ShlObj,
+  Winapi.ActiveX,
+  Vcl.ExtCtrls,
+  Vcl.ComCtrls,
+{$ELSE}
+  Windows,
+  Messages,
+  SysUtils,
+  Classes,
+  Graphics,
+  Controls,
+  Forms,
+  Dialogs,
+  StdCtrls,
+  CheckLst,
+  Registry,
+  ShlObj,
+  ActiveX,
+  ExtCtrls,
+  ComCtrls,
+{$IFEND}
+  AppConsts;
 
 type
   TEnvKind = ({ekDelphi5, ekBCB5, ekDelphi6, ekBCB6, ekDelphi7,

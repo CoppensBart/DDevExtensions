@@ -8,7 +8,11 @@ program DDevExtensionsReg;
 {$IFEND}
 
 uses
+{$IF CompilerVersion >= 23.0}
+  Vcl.Forms,
+{$ELSE}
   Forms,
+{$IFEND}
   Main in 'Main.pas' {FormMain},
   AppConsts in '..\Source\AppConsts.pas';
 

@@ -183,7 +183,13 @@ function _(const S: WideString): string;
 implementation
 
 uses
-  Windows, SysUtils;
+{$IF CompilerVersion >= 23.0}
+  Winapi.Windows,
+  System.SysUtils;
+{$ELSE}
+  Windows,
+  SysUtils;
+{$IFEND}
 
 var
   Lang: Cardinal = Cardinal(-1);
